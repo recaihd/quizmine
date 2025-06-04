@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gênio quiz Minecraft</title>
+    <meta name="description" content="Teste seus conhecimentos sobre Minecraft nesse quiz do jogo">
+    <meta name="author" content="Ricardo Sousa Gonçalves">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" href="https://i.postimg.cc/jdd7b0Nz/genioquiz.png">
+
+    <!-- Fonte pixelada -->
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+
+<style>
+    body {
+      position: relative;
+      background-image: url(https://i.postimg.cc/wjQtbD6T/minecraft-dungeons-upscaled.gif);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      text-shadow: 4px 4px 2px black;
+      font-family: 'Minecraft', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      z-index: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: -1;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 0;
+      width: 160px;
+      font-size: 16px;
+      background-color: #5fa845;
+      color: white;
+      border: 4px solid #3e5b2c;
+      outline: 2px solid #000;
+      border-radius: 0;
+      font-family: 'Minecraft', sans-serif;
+      cursor: pointer;
+      transition: transform 0.1s, background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6fc74e;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .icon-container {
+      display: inline-block;
+      position: relative;
+      margin: 0 10px;
+    }
+
+    .icon-container img {
+      cursor: pointer;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-family: 'Minecraft', sans-serif;
+      font-size: 14px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+    .icon-container:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+</style>
+
+</head>
+<body onload="startMusic()">
+
+    <div class="container">
+        <img src="https://i.postimg.cc/nch0Z8Vq/nunu-removebg-preview.png" height="270" width="170">
+        <img src="https://i.postimg.cc/PJnSbN1D/0f16284c-f5d0-48ea-9d7c-e182c1077f03-removebg-preview.png" height="270" width="170">
+        <h1>GÊNIO QUIZ<br>de Minecraft</h1>
+        
+        <a href="quiz1.html"><button>Jogar</button></a>
+        <a href="creditos.html"><button>Créditos</button></a>
+        <button onclick="toggleMusic()" id="musicButton">Música 🔇</button>
+
+        <br>
+
+        <div>
+          <span class="icon-container">
+            <a href="https://github.com/recaihd" target="_blank">
+              <img src="https://i.postimg.cc/FsSvZT1S/211904-social-github-icon.png" height="50" width="50">
+            </a>
+            <div class="tooltip">GitHub (repositórios)</div>
+          </span>
+
+          <span class="icon-container">
+            <a href="mailto:ricardosousapixtudo@gmail.com">
+              <img src="https://i.postimg.cc/1XDkxc4t/9165561-mail-email-icon.png" height="50" width="50">
+            </a>
+            <div class="tooltip">Email (contato)</div>
+          </span>
+
+          <span class="icon-container">
+            <a href="https://discord.gg/UNuYBvZREC" target="_blank">
+              <img src="https://i.postimg.cc/wvk6LpcF/8666257-discord-icon.png" height="50" width="50">
+            </a>
+            <div class="tooltip">Servidor Discord</div>
+          </span>
+        </div>
+    </div>
+
+    <script>
+      let audio;
+      let isPlaying = true;
+
+      function startMusic() {
+        audio = new Audio('https://files.catbox.moe/qaxx9t.m4a');
+        audio.loop = true;
+        audio.volume = 0.5;
+        audio.play().catch(() => {
+          console.log('Autoplay bloqueado. Clique na página para iniciar.');
+        });
+
+        document.addEventListener('click', () => {
+          audio.play();
+        }, { once: true });
+      }
+
+      function toggleMusic() {
+        if (audio.paused) {
+          audio.play();
+          document.getElementById("musicButton").innerText = "Música 🔇";
+        } else {
+          audio.pause();
+          document.getElementById("musicButton").innerText = "Música 🔊";
+        }
+      }
+    </script>
+
+</body>
+</html>

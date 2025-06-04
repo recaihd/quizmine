@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns</title>
+    <style>
+        body {
+            background-image: url(https://i.postimg.cc/BQd1GFRR/long-hair-purple-hair-purple-eyes-pyjamas-sousou-no-frieren-hd-wallpaper-preview.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            text-shadow: 4px 3px 2px black;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        h1, h2 {
+            color: white;
+            font-family: Minecraft, sans-serif;
+        }
+
+        .icon-container {
+            display: inline-block;
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .icon-container img {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .icon-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: Minecraft, sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .icon-container:hover .tooltip {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <br><br><br>
+        <h1>Parabéns amigão (a)</h1>
+        <img src="https://i.postimg.cc/ZKL9gqrh/1257020562518183956.gif">
+        <h2>Você zerou o quiz<br>de Minecraft!</h2>
+        <h2>Clique no seu ADM<br>favorito para prosseguir</h2>
+
+        <div>
+            <span class="icon-container">
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/63LzTv7p/1334153153083478057.png" height="70">
+                </a>
+                <div class="tooltip">Recai</div>
+            </span>
+
+            <span class="icon-container">
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/4dNw73pv/1334153184108613663.png" height="70">
+                </a>
+                <div class="tooltip">Teo</div>
+            </span>
+
+            <span class="icon-container">
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/90TjS1zQ/1338178948793630752.png" height="70">
+                </a>
+                <div class="tooltip">Max</div>
+            </span>
+
+            <span class="icon-container">
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/wMKB71m3/1348838487910125599.png" height="70">
+                </a>
+                <div class="tooltip">Never</div>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
